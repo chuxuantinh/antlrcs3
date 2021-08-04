@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45;netcoreapp2.0</TargetFrameworks>
+    <RootNamespace>AntlrUnitTests</RootNamespace>
+    <AssemblyName>AntlrUnitTests</AssemblyName>
+
+    <Description>The C# port of ANTLR 3</Description>
+    <Company>Tunnel Vision Laboratories, LLC</Company>
+    <Copyright>Copyright © Sam Harwell 2011</Copyright>
+    <Version>$(ANTLRVersion)</Version>
+    <FileVersion>$(ANTLRFileVersion)</FileVersion>
+    <InformationalVersion>$(ANTLRInformationalVersion)</InformationalVersion>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <PackageReference Include="Microsoft.Win32.Registry" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.1.18" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="body.st">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="method.st">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="page.st">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="row.st">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="users_list.st">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Runtime\Antlr3.Runtime.Debug\Antlr3.Runtime.Debug.csproj" />
+    <ProjectReference Include="..\Runtime\Antlr3.Runtime.JavaExtensions\Antlr3.Runtime.JavaExtensions.csproj" />
+    <ProjectReference Include="..\Runtime\Antlr3.Runtime\Antlr3.Runtime.csproj" />
+    <ProjectReference Include="..\Antlr3.StringTemplate\Antlr3.StringTemplate.csproj" />
+    <ProjectReference Include="..\Antlr3\Antlr3.csproj" />
+    <ProjectReference Include="..\Antlr4.StringTemplate\Antlr4.StringTemplate.csproj" />
+    <ProjectReference Include="..\Antlr3.Targets\Antlr3.Targets.CSharp3\Antlr3.Targets.CSharp3.csproj" />
+    <ProjectReference Include="..\Antlr3.Targets\Antlr3.Targets.Java\Antlr3.Targets.Java.csproj" />
+  </ItemGroup>
+
+</Project>
